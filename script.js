@@ -5,14 +5,14 @@ qrImg = wrapper.querySelector(".qr-code img");
 let preValue;
 
 generateBtn.addEventListener("click", () => {
-    let qrValue = qrInput.value.trim ();
+    let qrValue = qrInput.value.trim();
     if(!qrValue || preValue === qrValue) return;
     preValue = qrValue;
-    generateBtn.innerText = "generating QR Code...";
+    generateBtn.innerText = "Generating QR Code...";
     qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
     qrImg.addEventListener("load", () => {
-        wrapper.classList.add(active);
-        generateBtn.innerText = "generate QR Code";
+        wrapper.classList.add("active");
+        generateBtn.innerText = "Generate QR Code";
     });
 });
 
